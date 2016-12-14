@@ -1,8 +1,14 @@
 /* toto.p je suis le programme de saisie */
 
-def var var-toto as char .
+def var var-toto as log init no .
 
-update var-toto.
+update "Veux-tu manger ? "  var-toto.
 
-MESSAGE " Contenu de la variable var-toto :" var-toto
-  VIEW-AS ALERT-BOX INFO BUTTONS OK.
+if var-toto
+then do  :
+  MESSAGE "Je t'invite au restaurant ." VIEW-AS ALERT-BOX INFO BUTTONS OK.
+end.
+else do  :
+  MESSAGE "Tant pis . " VIEW-AS ALERT-BOX INFO BUTTONS OK.
+end.
+
